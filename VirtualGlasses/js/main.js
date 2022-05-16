@@ -135,26 +135,34 @@ let dataGlasses = [
     fn loadingGlasses là nó chỉ loading toàn bộ ra thôi, không
     có loading cụ thể 1 hình nào cả.
 */
-// 
+//
 
 function showimg(idImage) {
-    let content = "";
-    for (let value of dataGlasses) {
-      let { id } = value;
-      if (id == idImage) {
-        // console.log(value);  
-        content += `
+  let content = "";
+  let content2 = "";
+  for (let value of dataGlasses) {
+    let { id } = value;
+    if (id == idImage) {
+      // console.log(value);
+      content += `
           <div style="position: relative; top: 25%; z-index: 1;">
               <img class="" width="100px" src="${value.virtualImg}" alt="..." />
           </div>
           `;
-          document.getElementById("avatar").innerHTML = content;
-      }
+      content2 += `
+          <div>
+            <h3>${value.name} - (${value.color})</h3>
+            <h3>${value.price}</h3>
+            <p>${value.description}</p>
+          </div>
+        `;
+      document.getElementById("avatar").innerHTML = content;
+      document.getElementById("glassesInfo").innerHTML = content2;
     }
   }
+}
 
 function loadingGlasses() {
-    
   let content = "";
   console.log(dataGlasses);
   for (let value of dataGlasses) {
