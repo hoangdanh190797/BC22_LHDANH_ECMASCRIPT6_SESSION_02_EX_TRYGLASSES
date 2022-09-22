@@ -148,16 +148,15 @@ function showimg(idImage) {
           <div style="position: relative; top: 25%; z-index: 1;">
               <img class="" width="100px" src="${value.virtualImg}" alt="..." />
           </div>
-          `;
-      content2 += `
-          <div>
+          <div style="position: relative; z-index:1; top: 70%;">
             <h3>${value.name} - (${value.color})</h3>
             <h3>${value.price}</h3>
             <p>${value.description}</p>
           </div>
-        `;
+          `;
+      // content2 += ``;
       document.getElementById("avatar").innerHTML = content;
-      document.getElementById("glassesInfo").innerHTML = content2;
+      // document.getElementById("glassesInfo").innerHTML = content2;
     }
   }
 }
